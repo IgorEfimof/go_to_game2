@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
             p1Uncertainty = (totalIncreaseSpreadP1 / (totalDecreaseSpreadP1 + totalIncreaseSpreadP1)) * 100;
             p1ConfidencePercent = 100 - p1Uncertainty;
         }
-        let p1SpreadDetails = `Игрок 1: Снижение Кф. <span class="text-success-custom">↓${totalDecreaseSpreadP1.toFixed(4)}</span> | Увеличение Кф. <span class="text-danger-custom">↑${totalIncreaseSpreadP1.toFixed(4)}</span> | Уверенность: ${p1ConfidencePercent.toFixed(2)}%`;
+        let p1SpreadDetails = `Игрок 1: Снижение Кф. <span class="text-success-custom">↓${totalDecreaseSpreadP1.toFixed(4)}</span> | Увеличение Кф. <span class="text-dange[...]
 
         let p2Uncertainty = 0;
         let p2ConfidencePercent = 0;
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
             p2Uncertainty = (totalIncreaseSpreadP2 / (totalDecreaseSpreadP2 + totalIncreaseSpreadP2)) * 100;
             p2ConfidencePercent = 100 - p2Uncertainty;
         }
-        let p2SpreadDetails = `Игрок 2: Снижение Кф. <span class="text-success-custom">↓${totalDecreaseSpreadP2.toFixed(4)}</span> | Увеличение Кф. <span class="text-danger-custom">↑${totalIncreaseSpreadP2.toFixed(4)}</span> | Уверенность: ${p2ConfidencePercent.toFixed(2)}%`;
+        let p2SpreadDetails = `Игрок 2: Снижение Кф. <span class="text-success-custom">↓${totalDecreaseSpreadP2.toFixed(4)}</span> | Увеличение Кф. <span class="text-dange[...]
 
         let spreadVerdictMessage = "Вердикт по разбегу: ";
 
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Обновляем id элемента на `final_overall_winner` в вашем HTML,
-        // или используйте `overall_winner_smallest_decimal` если вы хотите перезаписать его.
+        // или используйте `overall_winner_smallest_decimal` если вы хотите перезаписать его.\
         // Я предлагаю использовать новое ID для ясности.
         document.getElementById('overall_winner_smallest_decimal').innerHTML = finalWinnerMessage;
         document.getElementById('overall_winner_smallest_decimal').className = `text-center ${finalWinnerClass}`;
