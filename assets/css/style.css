@@ -1,0 +1,322 @@
+/* Основной темный фон */
+body.bg-dark-custom {
+    background: #282828 !important;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    padding: 5px; /* Небольшой отступ от краев экрана */
+    overflow: hidden; /* Предотвращаем прокрутку на iOS, если клавиатура не отображается */
+    -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+}
+
+/* Карточка формы */
+.container {
+    flex-grow: 1; /* Разрешаем контейнеру расти, чтобы заполнить доступное пространство */
+    max-width: 280px; /* Оптимальная фиксированная ширина для формы на мобильных, еще уменьшена */
+    padding: 0; /* Убираем стандартный padding контейнера Bootstrap */
+}
+
+.form-container {
+    background: #333 !important;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0.6rem !important; /* Уменьшен общий padding контейнера */
+    max-height: calc(100vh - 15px); /* Уменьшаем max-height, чтобы форма не обрезалась */
+    overflow-y: auto; /* Для скролла содержимого, если оно не помещается */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+/* Стили для заголовков */
+h1, h4, h5, .fw-bold {
+    color: #fff !important;
+}
+
+/* Стили для меток (скрытые, но если будут видны) */
+.form-label {
+    color: #ccc;
+    font-weight: normal;
+    margin-bottom: 0.05rem;
+    display: block;
+    font-size: 0.75rem;
+}
+
+/* Поля ввода */
+input.form-control,
+input.form-control:focus {
+    background: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444;
+    border-radius: 0.4rem;
+    box-shadow: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    height: 26px; /* Высота поля уменьшена */
+    padding: 0 0.4rem; /* Отступы внутри поля уменьшены */
+    font-size: 0.85rem; /* Размер шрифта уменьшен */
+    text-align: center;
+    caret-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 16px; /* Важно для iOS, чтобы избежать масштабирования при фокусе */
+}
+
+/* Усиленная подсветка активного поля */
+input.form-control:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25) !important;
+    outline: none;
+}
+
+/* Плейсхолдеры */
+input.form-control::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* --- Результат и ошибки --- */
+#result, #error {
+    background: #222 !important;
+    color: #fff;
+    /* Уменьшены отступы, особенно по бокам, для сжатия */
+    padding: 0.4rem 0.1rem !important; /* Максимально сжатые отступы */
+    margin-top: 0.7rem !important; /* Уменьшен отступ сверху */
+    border-radius: 0.25rem;
+    min-height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    text-align: center; /* Центрируем текст */
+}
+
+#result.visible, #error.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#error {
+    background-color: #dc3545;
+    border-radius: 0.6rem;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+
+/* Класс для выделения некорректного поля */
+input.is-invalid {
+    border-color: #ff5555 !important;
+    background: #402828 !important;
+}
+
+/* Кнопка */
+.btn-secondary {
+    background-color: #444 !important;
+    border-color: #666 !important;
+    color: #fff !important;
+    padding: 0.25rem 0.5rem; /* Отступы для кнопки уменьшены */
+    font-size: 0.8rem; /* Размер шрифта кнопки уменьшен */
+}
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+    background-color: #555 !important;
+    border-color: #888 !important;
+    color: #fff !important;
+}
+
+/* --- Настройка колонок и выравнивания --- */
+
+/* Класс для удаления внутренних gutter'ов Bootstrap */
+.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 2px; /* Уменьшаем зазор между колонками */
+    padding-left: 2px; /* Уменьшаем зазор между колонками */
+}
+
+/* Колонка-заполнитель для номера гейма */
+.game-id-spacer {
+    /* col-2 = 2/12 = 16.66% ширины. Это сохранит отступ слева. */
+    text-align: right; /* На всякий случай */
+}
+
+/* Для центрирования двух колонок (col-5) по центру оставшегося пространства */
+.game-input-row.justify-content-center {
+    /* Bootstrap's justify-content-center на .row центрирует его содержимое */
+    /* Важно, чтобы col-2 + col-5 + col-5 = 12 или меньше, чтобы центрирование работало */
+    /* 2 + 5 + 5 = 12, так что это идеально. */
+}
+
+/* Уменьшаем отступы между строками и элементами */
+.mb-1 { margin-bottom: 0.05rem !important; } /* Почти нет отступа */
+.mb-2 { margin-bottom: 0.2rem !important; }
+.mb-3 { margin-bottom: 0.4rem !important; }
+.mt-3 { margin-top: 0.4rem !important; }
+.mt-4 { margin-top: 0.7rem !important; }
+
+/* Уменьшаем размеры шрифтов для компактности */
+h1 { font-size: 1.1rem !important; margin-bottom: 0.5rem !important; }
+p.text-muted { font-size: 0.7rem !important; margin-bottom: 0.5rem !important; }
+
+/* Специальные стили для текста в результатах: Сжатие и адаптация */
+#result h4 { font-size: 0.75rem !important; margin-bottom: 0.2rem !important; }
+#result p {
+    margin-bottom: 0.05rem; /* Очень маленький отступ между параграфами */
+    font-size: 0.68rem; /* Еще чуть меньше размер шрифта для максимальной компактности */
+    line-height: 1.05; /* Межстрочный интервал для плотности */
+    word-break: break-word; /* Разрешаем разрыв слов, чтобы длинные строки помещались */
+    white-space: normal; /* Отменяем nowrap, чтобы текст переносился */
+    text-overflow: clip; /* Отменяем многоточие */
+    max-width: 100%; /* Занимает всю доступную ширину */
+    padding: 0 0px; /* Отступы убраны, текст будет очень близко к краям */
+    text-align: center; /* Центрирование текста */
+}
+#result h5 {
+    font-size: 0.78rem; /* Еще чуть меньше размер шрифта */
+    margin-top: 0.25rem; /* Уменьшен отступ сверху */
+    margin-bottom: 0;
+    word-break: break-word;
+    white-space: normal;
+    text-overflow: clip;
+    max-width: 100%;
+    padding: 0 0px; /* Отступы убраны */
+    text-align: center;
+}
+hr {
+    margin: 0.4rem 0 !important; /* Уменьшаем отступы для разделителя */
+    border-top: 1px solid #555;
+    width: 90%; /* Ширина разделителя */
+}
+
+/* Прочие утилиты */
+.text-center { text-align: center !important; }
+.fw-bold { font-weight: bold !important; }
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    border: 0 !important;
+}
+
+/* --- Custom Keyboard Styles --- */
+#custom-keyboard-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2a2a2a;
+    padding: 10px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    z-index: 10000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#custom-keyboard-container.show {
+    transform: translateY(0);
+}
+
+#custom-keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 300px;
+    width: 100%;
+}
+
+#custom-keyboard button {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#custom-keyboard button:active {
+    background-color: #555;
+}
+
+#custom-keyboard button.delete-btn {
+    background-color: #dc3545;
+}
+#custom-keyboard button.delete-btn:active {
+    background-color: #c82333;
+}
+#custom-keyboard button.decimal-btn {
+    background-color: #007bff;
+}
+#custom-keyboard button.decimal-btn:active {
+    background-color: #0056b3;
+}
+
+/* Дополнительные классы для результатов */
+.text-success-custom { color: #28a745 !important; }
+.text-danger-custom { color: #dc3545 !important; }
+.text-info-custom { color: #17a2b8 !important; }
+.text-warning-custom { color: #ffc107 !important; }
+
+/* Медиа-запросы для адаптации */
+/* Для очень узких экранов / iPad в портретном режиме */
+@media (max-width: 400px) {
+    .container {
+        max-width: 270px; /* Еще уже для очень маленьких экранов */
+    }
+    .form-container {
+        padding: 0.3rem !important; /* Максимально уменьшаем padding для формы */
+    }
+    input.form-control {
+        height: 24px; /* Еще меньше высота */
+        font-size: 0.75rem; /* Еще меньше шрифт */
+        padding: 0 0.15rem;
+    }
+    h1 { font-size: 1rem !important; margin-bottom: 0.4rem !important;}
+    p.text-muted { font-size: 0.6rem !important; margin-bottom: 0.4rem !important;}
+    #result h4 { font-size: 0.7rem; margin-bottom: 0.15rem !important;}
+    #result p, #result h5 { font-size: 0.62rem; line-height: 1; } /* Самые маленькие шрифты для результатов */
+    .btn-secondary { font-size: 0.65rem; padding: 0.15rem 0.3rem; }
+    hr { margin: 0.3rem 0 !important; } /* Меньше отступы для разделителя */
+}
+
+/* Для iPad в горизонтальном режиме (если ширина больше 768px, но контейнер ограничен) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 320px; /* Чуть шире на больших экранах, сохраняя компактность */
+    }
+    /* Можно добавить более крупные шрифты для лучшей читаемости, если экран позволяет */
+    h1 { font-size: 1.2rem !important; }
+    p.text-muted { font-size: 0.75rem !important; }
+    input.form-control { font-size: 0.85rem; height: 28px; }
+    #result h4 { font-size: 0.85rem; }
+    #result p, #result h5 { font-size: 0.75rem; }
+}
