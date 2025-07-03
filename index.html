@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Калькулятор НТ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-dark-custom">
+    <div class="container mt-3">
+        <div class="form-container card shadow-sm">
+            <h1 class="text-center">Калькулятор (Лайв)</h1>
+            <p class="text-muted text-center mb-3">
+                Введите коэффициенты на геймы 5-10
+            </p>
+            <form id="mainForm" autocomplete="off">
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">5</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g5P1" class="form-label visually-hidden">Кф. Г5 И1</label>
+                        <input id="g5P1" name="g5P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g5P2" class="form-label visually-hidden">Кф. Г5 И2</label>
+                        <input id="g5P2" name="g5P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">6</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g6P1" class="form-label visually-hidden">Кф. Г6 И1</label>
+                        <input id="g6P1" name="g6P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g6P2" class="form-label visually-hidden">Кф. Г6 И2</label>
+                        <input id="g6P2" name="g6P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">7</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g7P1" class="form-label visually-hidden">Кф. Г7 И1</label>
+                        <input id="g7P1" name="g7P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g7P2" class="form-label visually-hidden">Кф. Г7 И2</label>
+                        <input id="g7P2" name="g7P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">8</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g8P1" class="form-label visually-hidden">Кф. Г8 И1</label>
+                        <input id="g8P1" name="g8P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g8P2" class="form-label visually-hidden">Кф. Г8 И2</label>
+                        <input id="g8P2" name="g8P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">9</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g9P1" class="form-label visually-hidden">Кф. Г9 И1</label>
+                        <input id="g9P1" name="g9P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g9P2" class="form-label visually-hidden">Кф. Г9 И2</label>
+                        <input id="g9P2" name="g9P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-1 game-input-row justify-content-center no-gutters">
+                    <div class="col-2 game-id-spacer visually-hidden">10</div>
+                    <div class="col-5 player-input-col">
+                        <label for="g10P1" class="form-label visually-hidden">Кф. Г10 И1</label>
+                        <input id="g10P1" name="g10P1" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.85" readonly>
+                    </div>
+                    <div class="col-5 player-input-col">
+                        <label for="g10P2" class="form-label visually-hidden">Кф. Г10 И2</label>
+                        <input id="g10P2" name="g10P2" type="text" class="form-control form-control-sm text-center" maxlength="4" inputmode="decimal" autocomplete="off" placeholder="1.91" readonly>
+                    </div>
+                </div>
+            </form>
+            <div class="d-grid gap-2 mt-3 mb-2">
+                <button id="clearDataBtn" class="btn btn-secondary btn-sm">Очистить</button>
+            </div>
+            <div id="result" class="mt-4 p-3 border rounded">
+                <h4 class="text-center">Результат:</h4>
+                <p id="player1_sum"></p>
+                <p id="player2_sum"></p>
+                <h5 id="overall_winner_decimal_sum" class="text-center"></h5>
+                <h5 id="decimal_sum_verdict" class="text-center mt-2"></h5>
+
+                <hr>
+                <h5 class="text-center">Анализ разбега Кф.:</h5>
+                <p id="p1_spread_summary"></p>
+                <p id="p2_spread_summary"></p>
+                <h5 id="overall_winner_spread_analysis" class="text-center"></h5>
+                <p id="last_game_spread_dynamic" class="text-center mt-2"></p>
+                <hr>
+                <h5 id="overall_winner_smallest_decimal" class="text-center"></h5>
+            </div>
+            <div id="error" class="mt-4 alert alert-danger"></div>
+        </div>
+    </div>
+
+    <div id="custom-keyboard-container" style="display: none;">
+        <div id="custom-keyboard">
+            <button data-key="1">1</button>
+            <button data-key="2">2</button>
+            <button data-key="3">3</button>
+            <button data-key="4">4</button>
+            <button data-key="5">5</button>
+            <button data-key="6">6</button>
+            <button data-key="7">7</button>
+            <button data-key="8">8</button>
+            <button data-key="9">9</button>
+            <button data-key="delete" class="delete-btn">←</button>
+            <button data-key="0">0</button>
+            <button data-key="." class="decimal-btn">.</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
